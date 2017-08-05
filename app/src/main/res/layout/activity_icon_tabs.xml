@@ -10,35 +10,31 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
+            android:checkableBehavior="single"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
 
-
-
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:layout_gravity="right"
                 android:id="@+id/settings"
                 android:src="@drawable/ic_setting"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true" />
+                android:layout_width="20dp"
+                android:layout_height="24dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="14dp"
+                android:alpha = "0.54"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:id="@+id/submitEditNote"
+                android:id="@+id/qrcamera"
                 android:src="@drawable/ic_qrcamera_black"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true" />
-
-
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="26dp"
+                android:alpha = "0.54"/>
 
 
         </android.support.v7.widget.Toolbar>
@@ -56,4 +52,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
 </android.support.design.widget.CoordinatorLayout>

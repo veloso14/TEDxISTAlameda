@@ -3,11 +3,11 @@
 
 
     <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#FFFFFF</color>
-    <color name="textColorPrimary">#ff2700</color>
+    <color name="colorPrimaryDark">#FF2700</color>
+    <color name="textColorPrimary">#757575</color>
+    <color name="navigationBarColor">#757575</color>
     <color name="windowBackground">#FFFFFF</color>
-    <color name="navigationBarColor">#000000</color>
-    <color name="colorAccent">#ff2700</color>
+    <color name="colorAccent">#FF2700</color>
 
 
     <!-- Screens background -->

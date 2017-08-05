@@ -1,5 +1,6 @@
 package com.fct.TEDxISTAlameda.activity;
 
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -36,7 +37,7 @@ public class IconTabsActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.textColorPrimary));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.colorAccent));
 
        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -60,10 +61,38 @@ public class IconTabsActivity extends AppCompatActivity {
         };
 
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(0).setText(null);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(1).setText(null);
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+        tabLayout.getTabAt(2).setText(null);
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
+        tabLayout.getTabAt(3).setText(null);
         tabLayout.getTabAt(4).setIcon(tabIcons[4]);
+        tabLayout.getTabAt(4).setText(null);
+
+        tabLayout.getTabAt(0).getIcon().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
+        tabLayout.getTabAt(1).getIcon().setColorFilter(getResources().getColor(R.color.navigationBarColor), PorterDuff.Mode.SRC_IN);
+        tabLayout.getTabAt(2).getIcon().setColorFilter(getResources().getColor(R.color.navigationBarColor), PorterDuff.Mode.SRC_IN);
+        tabLayout.getTabAt(3).getIcon().setColorFilter(getResources().getColor(R.color.navigationBarColor), PorterDuff.Mode.SRC_IN);
+        tabLayout.getTabAt(4).getIcon().setColorFilter(getResources().getColor(R.color.navigationBarColor), PorterDuff.Mode.SRC_IN);
+
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                tab.getIcon().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
+                viewPager.setCurrentItem(tab.getPosition());
+                toolbar.setTitle(viewPager.getAdapter().getPageTitle(tab.getPosition()));
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                tab.getIcon().setColorFilter(getResources().getColor(R.color.navigationBarColor), PorterDuff.Mode.SRC_IN);;
+            }
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -87,10 +116,13 @@ public class IconTabsActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
 
-
-
-
             return mFragmentList.get(position);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+
+            return mFragmentTitleList.get(position);
         }
 
         @Override

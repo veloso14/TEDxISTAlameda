@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\Veloso\Desktop\TEDxISTAlameda\TEDxISTAlameda\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Users\Veloso\Desktop\TEDxISTAlameda\TEDxISTAlameda\src\debug\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/JNGApura/Documents/TEDxISTAlameda-android-app-2017/TEDxISTAlameda/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/JNGApura/Documents/TEDxISTAlameda-android-app-2017/TEDxISTAlameda/src/debug/jniLibs"/></dataSet></merger>
