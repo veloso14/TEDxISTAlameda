@@ -1,10 +1,12 @@
 package com.fct.TEDxISTAlameda;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +16,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.fct.TEDxISTAlameda.Request.RegisterClass;
+import com.fct.TEDxISTAlameda.Request.emailRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,6 +24,8 @@ import org.json.JSONObject;
 
 
 public class Register extends AppCompatActivity {
+
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,11 @@ public class Register extends AppCompatActivity {
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
+
+
                 final String name = etName.getText().toString();
                 final String username = etmail.getText().toString();
                 final String password = etPass.getText().toString();
@@ -88,11 +98,29 @@ public class Register extends AppCompatActivity {
 
                             JSONObject jsonOResponse = new JSONObject(response);
                             boolean sucess = jsonOResponse.getBoolean("success");
+
                             if (sucess){
+
+
+                                Response.Listener<String> respondidoListerner = new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+
+                                        Log.d("resposta",response);
+
+                                        Intent intent  = new Intent(Register.this ,MainActivity.class);
+                                        Register.this.startActivity(intent);
+
+                                    }
+                                };
+
+
+                                emailRequest registerrequest = new emailRequest(username,respondidoListerner);
+                                RequestQueue queuuue = Volley.newRequestQueue(Register.this);
+                                queuuue.add(registerrequest);
+
+
                                 Toast.makeText(getApplicationContext(),"Registado com Sucesso", Toast.LENGTH_SHORT).show();
-                                SystemClock.sleep(730);
-                                Intent intent  = new Intent(Register.this ,MainActivity.class);
-                                 Register.this.startActivity(intent);
                             }
                             else  {
                                 AlertDialog.Builder  bulder =    new    AlertDialog.Builder(Register.this);

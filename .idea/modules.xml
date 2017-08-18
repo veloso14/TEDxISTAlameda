@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TEDxISTAlameda/TEDxISTAlameda.iml" filepath="$PROJECT_DIR$/TEDxISTAlameda/TEDxISTAlameda.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TEDxISTAlameda.iml" filepath="$PROJECT_DIR$/TEDxISTAlameda.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TEDxISTAlameda/TEDxISTAlameda-TEDxISTAlameda.iml" filepath="$PROJECT_DIR$/TEDxISTAlameda/TEDxISTAlameda-TEDxISTAlameda.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TEDxISTAlameda-android-app-2017.iml" filepath="$PROJECT_DIR$/TEDxISTAlameda-android-app-2017.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TEDxISTAlamedaa.iml" filepath="$PROJECT_DIR$/TEDxISTAlamedaa.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

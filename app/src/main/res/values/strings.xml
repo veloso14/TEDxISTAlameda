@@ -97,6 +97,9 @@
     <string name="ganha_pr_mios_fantasticos">Ganha prêmios fantasticos</string>
     <string name="desenvolvido_por_jo_o_veloso_e_beatriz_salvado">Desenvolvido por João Veloso e Beatriz Salvado</string>
     <string name="o_n_cleo_de_engenharia_eletrot_cnica_e_de_computadores_neec_da_faculdade_de_ci_ncias_e_tecnologia_uma_associa_o_sem_fins_lucrativos_composto_pelos_estudantes_de_mieec_da_fct">O Núcleo de Engenharia Eletrotécnica e de Computadores (NEEC) da Faculdade de Ciências e Tecnologia é uma associação sem fins lucrativos composto pelos estudantes de MiEEC da FCT.</string>
+    <string name="logoutt">Logout</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="send_feedback">Send Feedback</string>
 
 
 </resources>

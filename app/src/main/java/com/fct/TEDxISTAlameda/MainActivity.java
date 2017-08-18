@@ -21,6 +21,8 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.fct.TEDxISTAlameda.Request.RegisterClass;
+import com.fct.TEDxISTAlameda.Request.emailRequest;
 import com.linkedin.TEDxISTAlameda.APIHelper;
 import com.linkedin.TEDxISTAlameda.LISessionManager;
 import com.linkedin.TEDxISTAlameda.errors.LIApiError;
@@ -249,9 +251,48 @@ public class MainActivity extends Activity {
                 try {
 
                     JSONObject response = result.getResponseDataAsJson();
-                    String email = response.get("emailAddress").toString();
+                    final String email = response.get("emailAddress").toString();
                     String name =  response.get("formattedName").toString();
                     String FILENAME = "data";
+
+
+                    Response.Listener<String> responListerner = new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+
+                                JSONObject jsonOResponse = new JSONObject(response);
+                                boolean sucess = jsonOResponse.getBoolean("success");
+
+
+
+
+                                    Response.Listener<String> respondidoListerner = new Response.Listener<String>() {
+                                        @Override
+                                        public void onResponse(String response) {
+
+
+
+                                        }
+                                    };
+
+
+                                    emailRequest registerrequest = new emailRequest(email,respondidoListerner);
+                                    RequestQueue queuuue = Volley.newRequestQueue(com.fct.TEDxISTAlameda.MainActivity.this);
+                                    queuuue.add(registerrequest);
+
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    };
+
+
+
+                    RegisterClass registerrequest = new RegisterClass(email, name,20, "linkdedin",responListerner);
+                    RequestQueue queue = Volley.newRequestQueue(com.fct.TEDxISTAlameda.MainActivity.this);
+                    queue.add(registerrequest);
 
 
                     FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
